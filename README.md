@@ -61,10 +61,13 @@ A aplicação conta com um sistema inteligente de fallback: funciona de imediato
 
 Para conectar a um projeto Supabase próprio em nuvem:
 1. Crie um projeto no [Supabase](https://supabase.com).
-2. Vá no **SQL Editor** do Supabase e execute o script contido em `para-sempre/supabase/schema.sql`.
-3. Edite o arquivo `para-sempre/config.js` inserindo suas credenciais:
+2. No **SQL Editor**, execute uma vez todo o conteúdo de `supabase/schema.sql`.
+3. Em **Authentication → Users**, crie manualmente os usuários `darling@parasempre.local` e `dudinha@parasempre.local` e confirme as contas. Defina senhas novas e fortes; o site usa as senhas cadastradas nessa etapa. O SQL não cria nem armazena senhas.
+4. Edite `config.js` com a URL e a chave pública (publishable/anon) do projeto:
    ```javascript
    window.SUPABASE_URL = "https://seu-projeto.supabase.co";
    window.SUPABASE_ANON_KEY = "sua-anon-key-publica";
    ```
-4. As tabelas compartilhadas e individuais serão sincronizadas automaticamente com o PostgreSQL e Storage do Supabase via RLS.
+5. As tabelas compartilhadas e individuais serão acessadas pelo PostgreSQL com RLS. A tabela de fotos armazena a URL ou os dados da imagem enviados pelo formulário; o bucket de Storage preparado no SQL não é usado pelo código atual.
+
+> **Importante:** este SQL foi preparado para um projeto Supabase novo. Não execute sobre tabelas existentes sem fazer backup e revisar uma migração. Não publique senhas ou a chave `service_role` no código do site.

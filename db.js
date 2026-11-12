@@ -229,7 +229,13 @@
         try {
           const { data, error } = await this.supabase
             .from("dream_places")
-            .insert([newPlace])
+            .insert([{
+              name: newPlace.name,
+              country: newPlace.country,
+              image_url: newPlace.image_url,
+              description: newPlace.description,
+              visited: newPlace.visited
+            }])
             .select();
           if (!error && data && data.length) return data[0];
         } catch (err) {
@@ -309,7 +315,12 @@
         try {
           const { data, error } = await this.supabase
             .from(table)
-            .insert([newItem])
+            .insert([{
+              ...itemData,
+              owner_id: ownerId,
+              created_at: newItem.created_at,
+              updated_at: newItem.updated_at
+            }])
             .select();
           if (!error && data && data.length) return data[0];
         } catch (err) {
