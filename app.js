@@ -308,7 +308,7 @@
       container.innerHTML = artists.map(artist => `
         <div class="card-glass rounded-2xl overflow-hidden group flex flex-col justify-between">
           <div class="h-44 w-full relative overflow-hidden bg-slate-900">
-            <img src="${artist.image_url}" alt="${artist.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&fit=crop';"/>
+            <img src="${artist.image_url || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&fit=crop'}" alt="${artist.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&fit=crop';"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-3 left-3 right-3">
               <h3 class="font-editorial text-lg font-semibold text-white truncate">${artist.name}</h3>
@@ -785,7 +785,7 @@
       container.innerHTML = places.map(place => `
         <div class="card-glass rounded-2xl overflow-hidden group flex flex-col justify-between">
           <div class="h-48 w-full relative overflow-hidden bg-slate-900">
-            <img src="${place.image_url}" alt="${place.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&fit=crop';"/>
+            <img src="${place.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&fit=crop'}" alt="${place.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&fit=crop';"/>
             <div class="absolute top-2 right-2">
               <span class="px-2.5 py-1 rounded-full text-[10px] font-medium ${place.visited ? 'bg-emerald-500 text-white' : 'bg-teal-600/90 text-white'}">
                 ${place.visited ? 'Já Conhecemos' : 'Queremos Conhecer'}

@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
   <title>Para Sempre — Gustavo &amp; Dudinha</title>
+  <link rel="icon" type="image/png" href="./logo.png"/>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -27,19 +28,19 @@
   <!-- ==========================================
        VIEW: LOGIN
        ========================================== -->
-  <div id="view-login" class="min-h-screen flex items-center justify-center p-4 bg-[#051427] relative overflow-hidden">
+  <div id="view-login" class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
     <!-- Efeito de iluminação suave de fundo -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="login-glow login-glow-cyan absolute -top-32 -left-32 w-96 h-96 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="login-glow login-glow-orange absolute -bottom-32 -right-32 w-96 h-96 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="w-full max-w-md card-glass p-8 rounded-3xl relative z-10 border border-white/10 shadow-2xl">
+    <div class="login-card w-full max-w-md card-glass p-8 rounded-3xl relative z-10 border border-white/10 shadow-2xl">
       <!-- Cabeçalho de Login -->
       <div class="flex flex-col items-center text-center mb-8">
-        <div class="w-20 h-20 rounded-2xl overflow-hidden mb-4 shadow-lg border border-white/10 p-1 bg-black/20">
-          <img src="public/logo.png" alt="Para Sempre Logo" class="w-full h-full object-cover rounded-xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=200&auto=format&fit=crop&q=80';"/>
+        <div class="login-logo w-20 h-20 rounded-2xl overflow-hidden mb-4 shadow-lg border border-white/10 p-1 bg-black/20">
+          <img src="./logo.png" alt="Logo Para Sempre" class="w-full h-full object-cover rounded-xl"/>
         </div>
-        <h1 class="font-editorial text-3xl font-semibold tracking-tight text-white mb-1">Para Sempre</h1>
-        <p class="text-sm font-light text-slate-300">Um lugar só nosso.</p>
+        <h1 class="login-title font-editorial text-3xl font-semibold tracking-tight text-white mb-1">Para Sempre</h1>
+        <p class="login-subtitle text-sm font-light text-slate-300">Um lugar só nosso.</p>
       </div>
 
       <!-- Formulário de Autenticação -->
@@ -47,30 +48,30 @@
         <div id="login-error" class="hidden p-3.5 rounded-xl bg-red-500/20 border border-red-500/40 text-red-200 text-xs text-center"></div>
 
         <div>
-          <label for="login-username" class="block text-xs uppercase tracking-wider text-slate-400 mb-1.5 font-medium">Usuário</label>
+          <label for="login-username" class="login-label block text-xs uppercase tracking-wider text-slate-400 mb-1.5 font-medium">Usuário</label>
           <div class="relative">
-            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person</span>
+            <span class="login-icon material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg">person</span>
             <input id="login-username" type="text" autocomplete="username" required
-              class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700/60 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm transition-all"
+              class="login-input w-full pl-11 pr-4 py-3 rounded-xl bg-slate-900/60 border border-slate-700/60 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm transition-all"
               placeholder="Seu usuário"/>
           </div>
         </div>
 
         <div>
-          <label for="login-password" class="block text-xs uppercase tracking-wider text-slate-400 mb-1.5 font-medium">Senha</label>
+          <label for="login-password" class="login-label block text-xs uppercase tracking-wider text-slate-400 mb-1.5 font-medium">Senha</label>
           <div class="relative">
-            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock</span>
+            <span class="login-icon material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg">lock</span>
             <input id="login-password" type="password" autocomplete="current-password" required
-              class="w-full pl-11 pr-11 py-3 rounded-xl bg-slate-900/60 border border-slate-700/60 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm transition-all"
+              class="login-input w-full pl-11 pr-11 py-3 rounded-xl bg-slate-900/60 border border-slate-700/60 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm transition-all"
               placeholder="Sua senha"/>
-            <button type="button" id="btn-toggle-pwd" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white" onclick="window.ParaSempreAuth.togglePasswordVisibility()">
+            <button type="button" id="btn-toggle-pwd" class="login-toggle absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white" onclick="window.ParaSempreAuth.togglePasswordVisibility()">
               <span class="material-symbols-outlined text-lg" id="pwd-icon">visibility</span>
             </button>
           </div>
         </div>
 
         <button type="submit" id="btn-login-submit"
-          class="w-full py-3.5 px-4 rounded-xl font-medium text-sm text-white shadow-lg transition-all duration-200 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 active:scale-[0.99]">
+          class="login-submit w-full py-3.5 px-4 rounded-xl font-medium text-sm text-white shadow-lg transition-all duration-200 flex items-center justify-center gap-2 active:scale-[0.99]">
           <span>Entrar</span>
           <span class="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
@@ -91,7 +92,7 @@
           <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
         <div class="flex items-center gap-3">
-          <img src="public/logo.png" alt="Logo" class="w-8 h-8 rounded-lg object-cover border border-white/20"/>
+          <img src="./logo.png" alt="Logo" class="w-8 h-8 rounded-lg object-cover border border-white/20"/>
           <div>
             <div class="font-editorial text-lg font-semibold tracking-wide" id="header-user-title">Para Sempre</div>
             <div class="text-[11px] text-slate-400 tracking-wider" id="header-user-subtitle">Nosso cantinho, nossas histórias.</div>

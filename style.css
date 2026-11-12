@@ -47,6 +47,65 @@ body[data-theme="dudinha"] {
   --badge-text: #ffb2b8;
 }
 
+#view-login {
+  background:
+    radial-gradient(ellipse at 18% 12%, rgba(35, 183, 218, 0.13), transparent 38%),
+    radial-gradient(ellipse at 85% 88%, rgba(255, 76, 48, 0.12), transparent 38%),
+    #05090d;
+}
+
+.login-glow-cyan {
+  background-color: rgba(31, 190, 224, 0.12);
+}
+
+.login-glow-orange {
+  background-color: rgba(255, 76, 48, 0.12);
+}
+
+#view-login .login-card {
+  background: rgba(9, 17, 23, 0.88);
+  border-color: rgba(66, 197, 219, 0.2);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55), 0 0 40px rgba(31, 190, 224, 0.06);
+}
+
+.login-logo {
+  border-color: rgba(66, 197, 219, 0.35);
+  box-shadow: 0 8px 24px rgba(31, 190, 224, 0.14);
+}
+
+#view-login .login-title {
+  background: linear-gradient(90deg, #40c6e4, #ff6347);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.login-subtitle,
+.login-label,
+.login-icon,
+.login-toggle {
+  color: #a7b6bd;
+}
+
+.login-input {
+  border-color: rgba(148, 163, 184, 0.28);
+}
+
+.login-input:focus {
+  border-color: #31b9d8;
+  --tw-ring-color: rgba(49, 185, 216, 0.45);
+}
+
+.login-submit {
+  background-image: linear-gradient(100deg, #149ec5, #ef553d);
+  box-shadow: 0 8px 22px rgba(17, 151, 185, 0.2);
+}
+
+.login-submit:hover {
+  background-image: linear-gradient(100deg, #25b6db, #ff684d);
+  box-shadow: 0 10px 26px rgba(239, 85, 61, 0.22);
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
